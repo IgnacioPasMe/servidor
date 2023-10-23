@@ -1,0 +1,94 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color:#23c;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.circulos{
+    width: 600px;
+    padding: 10px;
+    border: 10px solid white;
+    display: flex;
+    flex-wrap: wrap;
+}
+.circulo{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 10px 15px;
+    background-color: white;
+    cursor: pointer;
+}
+.invisible{
+    opacity: 0;
+    animation: animacion 0.4s;
+    pointer-events: none;
+}
+.tiempo{
+    width: 600px;
+    border: 10px solid white;
+    height: 10px;
+    padding: 10px 0;
+    display: flex;
+    margin-top: 20px;
+}
+.tiempo div{
+    background-color: white;
+    margin: 0 5px;
+}
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0,0,0,0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.visible{
+    display: flex;
+}
+.modal h1{
+    font-weight: normal;
+    color: white;
+    font-size:5em;
+}
+.modal.button{
+   -webkit-appearance:none;
+    appearance:none;
+    display:block;
+    border:2px solid white;
+    background-color:transparent;
+    font-size:1.5 em;
+    color:white;
+    padding:10px 20px;
+    border-radius:10px;
+    margin-top:20px;
+}
+@keyframes animacion{
+    0%{
+        transform:escale(1);
+        opacity:1;
+    }
+    5%{
+        transform:scale(1.2);
+        opacity:1;
+    }
+    98%{
+        transform:scale(0.01);
+        opacity:1;
+    }
+    100%{
+        transform:scale(0.01);
+        opacity:0;
+    }
+}
