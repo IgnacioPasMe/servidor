@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font-family: monospace;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        h1{
+            font-weight: normal;
+            color: white;
+            font-size: 8em;
+            text-shadow: 2px 2px 0 black;
+        }
+        .esperando{
+            color: black;
+            text-shadow: none;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="esperando">esperando...</h1>
+    <script>
+
+        const titulo = document.querySelector("h1");
+
+        fetch("/color")
+        .then(respuesta => respuesta.json())
+        .then(color => {
+            let {r,g,b} = color;
+
+            titulo.classList.remove("esperando");
+            titulo.innerHTML = [r,g,b].join(",")
+            document.body.style.backgroundColor = `rgb(${[r,g,b].join(",")})`;
+        })
+
+    </script>
+</body>
+</html>
